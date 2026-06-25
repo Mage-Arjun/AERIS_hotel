@@ -33,7 +33,7 @@ A premium, immersive hotel brand website built with **Next.js 16**, **TypeScript
 ```bash
 # 1. Clone the repository
 git clone <repository-url>
-cd hitel_website
+cd AERIS_hotel
 
 # 2. Install dependencies
 npm install

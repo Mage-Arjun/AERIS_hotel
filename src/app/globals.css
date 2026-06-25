@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* ============================================
+   AERIS — Design System
+   ============================================ */
+
+@theme inline {
+  /* Primary Colors */
+  --color-background: #E0EEFE;
+  --color-secondary-bg: #E4E8E7;
+  --color-primary-text: #072549;
+  --color-secondary-text: #3D5A7A;
+  --color-primary-accent: #81BAFB;
+  --color-secondary-accent: #C0DDFD;
+  --color-borders: #C0DDFD;
+  --color-cards: #E4E8E7;
+  --color-success: #7BA898;
+  --color-error: #C4756A;
+  --color-hover-bg: #C0DDFD;
+
+  /* Typography */
+  --font-serif: 'Libre Caslon Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'General Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing Scale */
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-96: 96px;
+  --spacing-128: 128px;
+  --spacing-160: 160px;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(48px, 8vw, 120px); }
+h2 { font-size: clamp(42px, 6vw, 96px); }
+h3 { font-size: clamp(32px, 4vw, 72px); }
+h4 { font-size: clamp(24px, 3vw, 48px); }
+h5 { font-size: clamp(20px, 2vw, 32px); }
+
+p {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-secondary-text);
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: var(--color-primary-accent);
+  color: var(--color-primary-text);
+}
+
+/* ============================================
+   Focus Styles
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-accent);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-borders);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-text);
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.reading-width {
+  max-width: 680px;
+}
+
+.content-width {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .content-width {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-width {
+    padding: 0 64px;
+  }
+}
